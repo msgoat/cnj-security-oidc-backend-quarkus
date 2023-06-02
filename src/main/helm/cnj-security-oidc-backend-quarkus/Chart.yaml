@@ -1,0 +1,6 @@
+apiVersion: v2
+name: cnj-security-oidc-backend-quarkus
+description: "${project.description}"
+type: application
+version: ${revision}
+appVersion: "${project.version}"

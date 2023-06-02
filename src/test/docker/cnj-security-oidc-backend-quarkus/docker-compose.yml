@@ -1,0 +1,20 @@
+# docker-compose.yml
+# ----------------------------------------------------------------------------
+# Composes Docker containers and volumes to a runnable Java EE application
+# ----------------------------------------------------------------------------
+#
+---
+version: '3'
+
+services:
+
+  backend:
+    image: ${docker.image.name}:${project.version}
+    ports:
+      - "38080:8080"
+      - "38089:8089"
+    environment:
+      AGENT_JAVA_OPTS: "-javaagent:/home/quarkus/org.jacoco.agent.jar=output=tcpserver,address=*,port=8089"
+      DOCKER_JAVA_OPTS: "-Xms1G -Xmx1G"
+      MP_JWT_VERIFY_PUBLICKEY_LOCATION: "https://oidc.cloudtrain.aws.msgoat.eu/realms/cloudtrain/protocol/openid-connect/certs"
+      MP_JWT_VERIFY_ISSUER: "https://oidc.cloudtrain.aws.msgoat.eu/realms/cloudtrain"
