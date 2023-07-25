@@ -1,8 +1,7 @@
 package group.msg.at.cloud.cloudtrain.adapter.rest;
 
-import group.msg.at.cloud.cloudtrain.core.entity.Message;
 import group.msg.at.cloud.cloudtrain.core.boundary.HelloWorld;
-
+import group.msg.at.cloud.cloudtrain.core.entity.Message;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;

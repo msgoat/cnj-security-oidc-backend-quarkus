@@ -1,19 +1,19 @@
 package group.msg.at.cloud.cloudtrain.core.boundary;
 
 import group.msg.at.cloud.cloudtrain.core.entity.Message;
-import org.eclipse.microprofile.jwt.JsonWebToken;
-
 import jakarta.annotation.security.RolesAllowed;
-import jakarta.enterprise.context.Dependent;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
+import org.eclipse.microprofile.jwt.JsonWebToken;
+
 import java.security.Principal;
 import java.util.UUID;
 
 /**
  * Simple {@code Boundary} that returns welcome messages.
  */
-@Dependent
+@ApplicationScoped
 @Transactional
 @RolesAllowed("CLOUDTRAIN_USER")
 public class HelloWorld {

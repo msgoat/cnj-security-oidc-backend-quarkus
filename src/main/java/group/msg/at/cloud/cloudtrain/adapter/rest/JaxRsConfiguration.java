@@ -1,10 +1,9 @@
 package group.msg.at.cloud.cloudtrain.adapter.rest;
 
-import org.eclipse.microprofile.auth.LoginConfig;
-
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
+import org.eclipse.microprofile.auth.LoginConfig;
 
 /**
  * JAX-RS configuration class that triggers activation of the JAX-RS feature
