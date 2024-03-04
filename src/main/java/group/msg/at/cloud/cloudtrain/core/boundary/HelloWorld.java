@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 import org.eclipse.microprofile.jwt.JsonWebToken;
 
 import java.security.Principal;
+import java.util.Locale;
 import java.util.UUID;
 
 /**
@@ -27,7 +28,11 @@ public class HelloWorld {
     JsonWebToken jwt;
 
     public Message getHelloMessage() {
-        return new Message(UUID.randomUUID(), "hello", String.format(WELCOME_MESSAGE_TEMPLATE, getAuthenticatedUserName()));
+        Message result = new Message(UUID.randomUUID());
+        result.setCode("hello");
+        result.setText(String.format(WELCOME_MESSAGE_TEMPLATE, getAuthenticatedUserName()));
+        result.setLocale(Locale.ENGLISH);
+        return result;
     }
 
     private String getAuthenticatedUserName() {

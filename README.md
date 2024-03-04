@@ -5,6 +5,10 @@ by [OpenID Connect](https://openid.net/developers/how-connect-works/)
 security based on [MicroProfile JWT Auth](https://download.eclipse.org/microprofile/microprofile-jwt-auth-2.1/microprofile-jwt-auth-spec-2.1.html) feature
 provided by Quarkus.
 
+The application is packaged as a multi-architecture docker image which supports the following platforms:
+* linux/amd64
+* linux/arm64/v8
+
 ## Synopsis
 
 Please check [Maven POM](pom.xml) for details on how-to integrate `MicroProfile JWT Auth`
@@ -63,6 +67,10 @@ A changelog can be found in [changelog.md](changelog.md).
 ## Docker Pull Command
 
 `docker pull docker.cloudtrain.aws.msgoat.eu/cloudtrain/cnj-security-oidc-backend-quarkus`
+
+## Helm Pull Command
+
+`helm pull oci://docker.cloudtrain.aws.msgoat.eu/cloudtrain-charts/cnj-security-oidc-backend-quarkus`
 
 ## HOW-TO build this application locally
 
